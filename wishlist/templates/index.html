@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Wish List Items</h1>
+
+{% if items %}
+    {% for item in items%}
+    {{ item.description }}
+    {% endfor %}
+{% else %}
+<h3>No Wish List Items Exist</h3>
+{% endif %}
+<hr>
+<a class="pure-button" href="{%url 'item_create' %}">Add A Wish Item</a>
 {% endblock %}
