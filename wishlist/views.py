@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Item
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from .forms import ItemForm
 
 # Create your views here.
@@ -17,3 +17,7 @@ class ItemCreate(CreateView):
         context = super(ItemCreate, self).get_context_data(**kwargs)
         context['form'] = ItemForm()
         return context
+
+class ItemDelete(DeleteView):
+    model = Item
+    success_url = '/'

@@ -11,3 +11,12 @@ body {
 .main {
     /* width: 100%; */
 }
+
+table {
+    margin: 2rem auto;
+}
+
+table a {
+    color: red;
+    text-decoration: none;
+}
